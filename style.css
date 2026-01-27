@@ -1,72 +1,35 @@
 body {
-margin: 0;
-font-family: Arial, sans-serif;
-background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
-color: white;
-text-align: center;
+background:#0f2027;
+color:white;
+font-family:Arial;
+text-align:center;
 }
 
-header {
-padding: 30px;
-background: rgba(0,0,0,0.4);
-}
-
-#search {
-margin: 20px auto;
-padding: 10px;
-width: 260px;
-border-radius: 8px;
-border: none;
-font-size: 16px;
-}
-
-.filters button {
-margin: 5px;
-padding: 8px 14px;
-border: none;
-border-radius: 6px;
-cursor: pointer;
-}
-
-.table {
-display: grid;
-grid-template-columns: repeat(10, 70px);
-gap: 10px;
-justify-content: center;
-margin-bottom: 40px;
+.periodic-table {
+display:grid;
+grid-template-columns: repeat(18, 70px);
+gap:6px;
+justify-content:center;
 }
 
 .element {
-padding: 12px;
-border-radius: 10px;
-cursor: pointer;
-transition: transform 0.2s;
+border-radius:8px;
+padding:5px;
+cursor:pointer;
+font-size:14px;
 }
 
-.element:hover {
-transform: scale(1.15);
+.element span {
+font-size:18px;
+font-weight:bold;
 }
 
-.metal { background: #64b5f6; }
-.ametal { background: #81c784; }
-.soygaz { background: #fff176; color: black; }
+.metal { background:#64b5f6; }
+.ametal { background:#81c784; }
+.soygaz { background:#ffd54f; color:black; }
 
-#popup {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0,0,0,0.7);
-display: none;
+#search {
+padding:8px;
+margin:10px;
+width:220px;
 }
-
-#popup-content {
-background: white;
-color: black;
-padding: 20px;
-width: 300px;
-margin: 120px auto;
-border-radius: 12px;
-}
-
