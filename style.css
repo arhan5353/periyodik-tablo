@@ -1,92 +1,100 @@
 body {
-    background: radial-gradient(circle, #0f2027, #203a43, #2c5364);
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
+  background: #0f172a;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
 h1 {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
-.butonlar {
-    margin-bottom: 20px;
+#search {
+  padding: 10px;
+  width: 300px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
 }
 
-button {
-    padding: 10px 15px;
-    margin: 5px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: 0.3s;
+.filters {
+  margin-bottom: 20px;
 }
 
-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px white;
+.filter {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.tablo {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 15px;
-    padding: 20px;
-    max-width: 1000px;
-    margin: auto;
+.ametal { background: #22c55e; }
+.metal { background: #60a5fa; }
+.yarimetal { background: #facc15; color:black; }
+.soygaz { background: #a78bfa; }
+.all { background: #e5e7eb; color:black; }
+
+.periodic-table {
+  display: grid;
+  grid-template-columns: repeat(18, 70px);
+  gap: 6px;
+  justify-content: center;
 }
 
 .element {
-    border-radius: 15px;
-    padding: 10px;
-    height: 140px;
-    position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-    transition: 0.4s;
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
 .element:hover {
-    transform: translateY(-10px) scale(1.05);
+  transform: scale(1.1);
 }
 
-/* RENKLER */
-.metal {
-    background: linear-gradient(135deg, #b79891, #94716b);
+.element .number {
+  font-size: 10px;
 }
 
-.ametal {
-    background: linear-gradient(135deg, #56ab2f, #a8e063);
+.element .symbol {
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.yari {
-    background: linear-gradient(135deg, #614385, #516395);
+.element .name {
+  font-size: 9px;
 }
 
-.soygaz {
-    background: linear-gradient(135deg, #2193b0, #6dd5ed);
+.Metal { background: #1e40af; }
+.Ametal { background: #15803d; }
+.YarıMetal { background: #ca8a04; color:black; }
+.Soygaz { background: #6d28d9; }
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
 }
 
-/* ELEMENT ICERIK */
-.ikon {
-    font-size: 28px;
+.modal-content {
+  background: #020617;
+  width: 400px;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 15px;
 }
 
-.numara {
-    position: absolute;
-    top: 8px;
-    right: 10px;
-    font-size: 12px;
+.modal img {
+  width: 100%;
+  border-radius: 10px;
 }
 
-.sembol {
-    font-size: 32px;
-    font-weight: bold;
-    margin-top: 10px;
+.close {
+  float: right;
+  font-size: 25px;
+  cursor: pointer;
 }
 
-.isim {
-    font-size: 14px;
-}
-
-  
