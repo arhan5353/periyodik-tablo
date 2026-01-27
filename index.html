@@ -1,85 +1,36 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <title>Periyodik Tablo</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>Periyodik Tablo</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Periyodik Tablo</h1>
+<h1>🧪 Periyodik Tablo</h1>
 
-<div class="butonlar">
-    <button onclick="filtrele('hepsi')">Hepsi</button>
-    <button onclick="filtrele('metal')">Metaller</button>
-    <button onclick="filtrele('ametal')">Ametaller</button>
-    <button onclick="filtrele('yari')">Yarı Metaller</button>
-    <button onclick="filtrele('soygaz')">Soygazlar</button>
+<input type="text" id="search" placeholder="Element ara (isim veya sembol)">
+
+<div class="filters">
+  <button class="filter ametal" onclick="filterType('Ametal')">Ametal</button>
+  <button class="filter metal" onclick="filterType('Metal')">Metal</button>
+  <button class="filter yarimetal" onclick="filterType('Yarı Metal')">Yarı Metal</button>
+  <button class="filter soygaz" onclick="filterType('Soygaz')">Soygaz</button>
+  <button class="filter all" onclick="filterType('all')">Tümü</button>
 </div>
 
-<div class="tablo">
-    <!-- METAL -->
-    <div class="element metal">
-        <div class="ikon">⚙️</div>
-        <div class="numara">26</div>
-        <div class="sembol">Fe</div>
-        <div class="isim">Demir</div>
-    </div>
+<div class="periodic-table" id="table"></div>
 
-    <div class="element metal">
-        <div class="ikon">⚙️</div>
-        <div class="numara">29</div>
-        <div class="sembol">Cu</div>
-        <div class="isim">Bakır</div>
-    </div>
-
-    <!-- YARI METAL -->
-    <div class="element yari">
-        <div class="ikon">🔬</div>
-        <div class="numara">14</div>
-        <div class="sembol">Si</div>
-        <div class="isim">Silisyum</div>
-    </div>
-
-    <div class="element yari">
-        <div class="ikon">🔬</div>
-        <div class="numara">5</div>
-        <div class="sembol">B</div>
-        <div class="isim">Bor</div>
-    </div>
-
-    <!-- AMETAL -->
-    <div class="element ametal">
-        <div class="ikon">🔥</div>
-        <div class="numara">8</div>
-        <div class="sembol">O</div>
-        <div class="isim">Oksijen</div>
-    </div>
-
-    <div class="element ametal">
-        <div class="ikon">🔥</div>
-        <div class="numara">7</div>
-        <div class="sembol">N</div>
-        <div class="isim">Azot</div>
-    </div>
-
-    <!-- SOYGAZ -->
-    <div class="element soygaz">
-        <div class="ikon">💨</div>
-        <div class="numara">10</div>
-        <div class="sembol">Ne</div>
-        <div class="isim">Neon</div>
-    </div>
-
-    <div class="element soygaz">
-        <div class="ikon">💨</div>
-        <div class="numara">18</div>
-        <div class="sembol">Ar</div>
-        <div class="isim">Argon</div>
-    </div>
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <h2 id="modal-title"></h2>
+    <img id="modal-img">
+    <p id="modal-info"></p>
+  </div>
 </div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
