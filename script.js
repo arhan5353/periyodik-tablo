@@ -16,19 +16,7 @@ tur: "Soygaz",
 grup: 18,
 periyot: 1,
 kullanim: "Balonlar, MR cihazları"
-}
-};
-function showInfo(e) {
-let el = elements[e];
-document.getElementById("details").innerHTML =
-"<b>" + el.ad + "</b><br>" +
-"Atom No: " + el.atomNo + "<br>" +
-"Atom Ağırlığı: " + el.agirlik + "<br>" +
-"Grup: " + el.grup + "<br>" +
-"Periyot: " + el.periyot + "<br>" +
-"Tür: " + el.tur + "<br>" +
-"Kullanım Alanı: " + el.kullanim;
-}
+},
 O: {
 ad: "Oksijen",
 atomNo: 8,
@@ -56,4 +44,16 @@ grup: 17,
 periyot: 3,
 kullanim: "Dezenfektan, su arıtma"
 }
+};
 
+function showInfo(e) {
+let el = elements[e];
+document.getElementById("details").innerHTML =
+"<b>" + el.ad + "</b><br>" +
+"Atom No: " + el.atomNo + "<br>" +
+"Atom Ağırlığı: " + el.agirlik + "<br>" +
+"Grup: " + el.grup + "<br>" +
+"Periyot: " + el.periyot + "<br>" +
+"Tür: " + el.tur + "<br>" +
+"Kullanım Alanı: " + el.kullanim;
+}
