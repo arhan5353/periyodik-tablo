@@ -27,3 +27,6 @@ width: 300px;
 border: 2px solid black;
 padding: 10px;
 }
+.metal { background: #bbdefb; }
+.ametal { background: #c8e6c9; }
+.soygaz { background: #fff9c4; }
