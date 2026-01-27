@@ -47,34 +47,49 @@ header p {
   margin-bottom: 15px;
 }
 
-/* FİLTRE BUTONLARI */
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
+/* NEON FİLTRELER */
 .filter {
-  padding: 10px 16px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  font-weight: bold;
-  color: #020617;
-  transition: 0.3s;
+  position: relative;
+  background: transparent;
+  color: inherit;
+  border: 2px solid currentColor;
+  box-shadow:
+    0 0 8px currentColor,
+    0 0 16px currentColor inset;
 }
 
+/* METAL NEON */
+.filter.metal {
+  color: #facc15;
+}
+
+/* AMETAL NEON */
+.filter.ametal {
+  color: #22c55e;
+}
+
+/* YARI METAL NEON */
+.filter.yarimetal {
+  color: #38bdf8;
+}
+
+/* SOYGAZ NEON */
+.filter.soygaz {
+  color: #a855f7;
+}
+
+/* TÜMÜ */
+.filter.all {
+  color: #e5e7eb;
+}
+
+/* HOVER NEON PATLAMA */
 .filter:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px currentColor;
+  box-shadow:
+    0 0 15px currentColor,
+    0 0 30px currentColor,
+    0 0 45px currentColor inset;
 }
-
-.metal { background: #facc15; }
-.ametal { background: #22c55e; }
-.yarimetal { background: #38bdf8; }
-.soygaz { background: #a855f7; }
-.all { background: #e5e7eb; }
 
 /* PERİYODİK TABLO */
 .periodic-table {
