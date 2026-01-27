@@ -29,4 +29,31 @@ document.getElementById("details").innerHTML =
 "Tür: " + el.tur + "<br>" +
 "Kullanım Alanı: " + el.kullanim;
 }
+O: {
+ad: "Oksijen",
+atomNo: 8,
+agirlik: 15.999,
+tur: "Ametal",
+grup: 16,
+periyot: 2,
+kullanim: "Solunum, tıbbi oksijen"
+},
+Na: {
+ad: "Sodyum",
+atomNo: 11,
+agirlik: 22.99,
+tur: "Metal",
+grup: 1,
+periyot: 3,
+kullanim: "Tuz üretimi, sokak lambaları"
+},
+Cl: {
+ad: "Klor",
+atomNo: 17,
+agirlik: 35.45,
+tur: "Ametal",
+grup: 17,
+periyot: 3,
+kullanim: "Dezenfektan, su arıtma"
+}
 
