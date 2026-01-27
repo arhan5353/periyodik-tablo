@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <title>Periyodik Tablo</title>
+  <meta charset="UTF-8">
+  <title>Periyodik Tablo | Kimya Projesi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>🧪 Periyodik Tablo</h1>
+<header>
+  <h1>🧪 PERİYODİK TABLO</h1>
+  <p>118 element • Kimya Dönem Ödevi</p>
+</header>
 
-<input type="text" id="search" placeholder="Element ara (isim veya sembol)">
+<section class="controls">
+  <input type="text" id="searchInput" placeholder="Element ara (Hidrojen, H, 1...)">
 
-<div class="filters">
-  <button class="filter ametal" onclick="filterType('Ametal')">Ametal</button>
-  <button class="filter metal" onclick="filterType('Metal')">Metal</button>
-  <button class="filter yarimetal" onclick="filterType('Yarı Metal')">Yarı Metal</button>
-  <button class="filter soygaz" onclick="filterType('Soygaz')">Soygaz</button>
-  <button class="filter all" onclick="filterType('all')">Tümü</button>
-</div>
+  <div class="filters">
+    <button class="filter metal" onclick="filterElements('Metal')">Metal</button>
+    <button class="filter ametal" onclick="filterElements('Ametal')">Ametal</button>
+    <button class="filter yarimetal" onclick="filterElements('Yarı Metal')">Yarı Metal</button>
+    <button class="filter soygaz" onclick="filterElements('Soygaz')">Soygaz</button>
+    <button class="filter all" onclick="filterElements('all')">Tümü</button>
+  </div>
+</section>
 
-<div class="periodic-table" id="table"></div>
+<main>
+  <div id="periodicTable" class="periodic-table"></div>
+</main>
 
-<!-- Modal -->
+<!-- BİLGİ PENCERESİ -->
 <div id="modal" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal()">×</span>
-    <h2 id="modal-title"></h2>
-    <img id="modal-img">
-    <p id="modal-info"></p>
+    <h2 id="modalName"></h2>
+    <img id="modalImage" alt="Element görseli">
+    <div id="modalDetails"></div>
   </div>
 </div>
 
