@@ -1,3 +1,38 @@
+fetch("https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json")
+.then(res => res.json())
+.then(data => {
+  window.allElements = data.elements.map(e => ({
+    symbol: e.symbol,
+    name: e.name.toLowerCase(),
+    number: e.number,
+    group: e.xpos,
+    period: e.ypos,
+    type: e.category.includes("noble") ? "Soygaz" :
+          e.category.includes("metal") ? "Metal" : "Ametal",
+    weight: e.atomic_mass,
+    summary: e.summary
+  }));
+  drawElements(window.allElements);
+});
+const table = document.getElementById("table");
+
+function drawElements(list) {
+  table.innerHTML = "";
+  list.forEach(e => {
+    const div = document.createElement("div");
+    div.className = "element " + e.type.toLowerCase();
+    div.style.gridColumn = e.group;
+    div.style.gridRow = e.period;
+
+    div.innerHTML = `
+      <span>${e.symbol}</span>
+      <small>${e.number}</small>
+    `;
+
+    div.onclick = () => showInfo(e);
+    table.appendChild(div);
+  });
+}
 const elements = [
 {symbol:"H", name:"Hidrojen", number:1, type:"Ametal", group:1, period:1},
 {symbol:"He", name:"Helyum", number:2, type:"Soygaz", group:18, period:1},
