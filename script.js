@@ -90,4 +90,16 @@ document.getElementById("popup").style.display = "block";
 
 document.getElementById("popup").onclick = () =>
 document.getElementById("popup").style.display = "none";
+document.getElementById("search").addEventListener("keyup", e => {
+const v = e.target.value.toLowerCase();
+drawElements(
+window.allElements.filter(el =>
+el.name.includes(v) || el.symbol.toLowerCase().includes(v)
+)
+);
+});
+function filterType(type){
+if(type==="all") drawElements(window.allElements);
+else drawElements(window.allElements.filter(e=>e.type===type));
+}
 
