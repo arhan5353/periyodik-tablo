@@ -52,3 +52,47 @@ fetch("https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master
    ========================= */
 
 document.getElementById("search").addEventListener("keyup", e => {
+  const value = e.target.value.toLowerCase();
+
+  drawElements(
+    window.allElements.filter(el =>
+      el.name.includes(value) ||
+      el.symbol.toLowerCase().includes(value)
+    )
+  );
+});
+
+/* =========================
+   FİLTRE
+   ========================= */
+
+function filterType(type) {
+  if (type === "all") {
+    drawElements(window.allElements);
+  } else {
+    drawElements(
+      window.allElements.filter(e => e.type === type)
+    );
+  }
+}
+
+/* =========================
+   BİLGİ PENCERESİ (POPUP)
+   ========================= */
+
+function showInfo(e) {
+  document.getElementById("popup-content").innerHTML = `
+    <h3>${e.symbol} - ${e.name}</h3>
+    <p><b>Atom Numarası:</b> ${e.number}</p>
+    <p><b>Atom Ağırlığı:</b> ${e.weight}</p>
+    <p><b>Tür:</b> ${e.type}</p>
+    <p>${e.summary}</p>
+    <p><i>Kapatmak için tıkla</i></p>
+  `;
+
+  document.getElementById("popup").style.display = "block";
+}
+
+document.getElementById("popup").onclick = () => {
+  document.getElementById("popup").style.display = "none";
+};
