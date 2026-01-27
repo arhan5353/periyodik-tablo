@@ -76,4 +76,18 @@ function filterType(type){
     drawElements(elements.filter(e => e.type === type));
   }
 }
+function showInfo(e) {
+document.getElementById("popup-content").innerHTML = `
+<h3>${e.symbol} - ${e.name}</h3>
+<p><b>Atom No:</b> ${e.number}</p>
+<p><b>Atom Ağırlığı:</b> ${e.weight}</p>
+<p><b>Tür:</b> ${e.type}</p>
+<p>${e.summary}</p>
+<p><i>Kapatmak için tıkla</i></p>
+`;
+document.getElementById("popup").style.display = "block";
+}
+
+document.getElementById("popup").onclick = () =>
+document.getElementById("popup").style.display = "none";
 
