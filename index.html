@@ -7,46 +7,20 @@
 </head>
 <body>
 
-<header>
-  <h1>🧪 Etkileşimli Periyodik Tablo</h1>
-  <p>Elementler türlerine göre sınıflandırılmıştır</p>
-</header>
+<h1>🧪 Etkileşimli Periyodik Tablo</h1>
 
-<input type="text" id="search" placeholder="Element ara (H, Oksijen, Na)">
+<input id="search" placeholder="Element ara">
 
 <div class="filters">
-  <button onclick="filterElements('all')">Tümü</button>
-  <button onclick="filterElements('Metal')">Metaller</button>
-  <button onclick="filterElements('Ametal')">Ametaller</button>
-  <button onclick="filterElements('Soygaz')">Soygazlar</button>
+<button onclick="filterType('all')">Tümü</button>
+<button onclick="filterType('Metal')">Metal</button>
+<button onclick="filterType('Ametal')">Ametal</button>
+<button onclick="filterType('Soygaz')">Soygaz</button>
 </div>
 
-<div class="table">
-  <div class="element ametal" data-type="Ametal" onclick="showInfo('H')">
-    <b>H</b><br>1
-  </div>
-
-  <div class="element soygaz" data-type="Soygaz" onclick="showInfo('He')">
-    <b>He</b><br>2
-  </div>
-
-  <div class="element ametal" data-type="Ametal" onclick="showInfo('O')">
-    <b>O</b><br>8
-  </div>
-
-  <div class="element metal" data-type="Metal" onclick="showInfo('Na')">
-    <b>Na</b><br>11
-  </div>
-
-  <div class="element ametal" data-type="Ametal" onclick="showInfo('Cl')">
-    <b>Cl</b><br>17
-  </div>
-</div>
-
-<div id="popup" onclick="this.style.display='none'">
-  <div id="popup-content"></div>
-</div>
+<div id="table" class="periodic-table"></div>
 
 <script src="script.js"></script>
 </body>
 </html>
+
