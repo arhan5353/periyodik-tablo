@@ -1,29 +1,41 @@
-<div id="popup">
-  <div id="popup-content"></div>
-</div>
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<title>Etkileşimli Periyodik Tablo</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Etkileşimli Periyodik Tablo</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>🧪 Etkileşimli Periyodik Tablo</h1>
+  <!-- BAŞLIK -->
+  <h1>🧪 Etkileşimli Periyodik Tablo</h1>
 
-<input id="search" placeholder="Element ara">
+  <!-- ARAMA ÇUBUĞU -->
+  <input 
+    type="text" 
+    id="search" 
+    placeholder="Element ara (H, Oksijen, Na)"
+  >
 
-<div class="filters">
-<button onclick="filterType('all')">Tümü</button>
-<button onclick="filterType('Metal')">Metal</button>
-<button onclick="filterType('Ametal')">Ametal</button>
-<button onclick="filterType('Soygaz')">Soygaz</button>
-</div>
+  <!-- FİLTRE BUTONLARI -->
+  <div class="filters">
+    <button onclick="filterType('all')">Tümü</button>
+    <button onclick="filterType('Metal')">Metal</button>
+    <button onclick="filterType('Ametal')">Ametal</button>
+    <button onclick="filterType('Soygaz')">Soygaz</button>
+  </div>
 
-<div id="table" class="periodic-table"></div>
+  <!-- PERİYODİK TABLO -->
+  <div id="table" class="periodic-table"></div>
 
-<script src="script.js"></script>
+  <!-- POPUP (BİLGİ PENCERESİ) -->
+  <div id="popup">
+    <div id="popup-content"></div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script src="script.js"></script>
+
 </body>
 </html>
 
