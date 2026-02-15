@@ -1,25 +1,31 @@
-/* RESET */
+/* =========================
+   RESET
+========================= */
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
 }
 
-/* GENEL METALİK ARKA PLAN */
+/* =========================
+   GENEL METALİK ARKA PLAN
+========================= */
 body{
   font-family:'Segoe UI',sans-serif;
   background: linear-gradient(135deg,#0f172a,#1e293b,#0f172a);
   background-size:400% 400%;
-  animation: bgMove 12s infinite alternate;
+  animation: arkaplan 12s infinite alternate;
   color:#e5e7eb;
 }
 
-@keyframes bgMove{
+@keyframes arkaplan{
   0%{background-position:left;}
   100%{background-position:right;}
 }
 
-/* BAŞLIK */
+/* =========================
+   BAŞLIK
+========================= */
 header{
   text-align:center;
   padding:20px;
@@ -31,7 +37,7 @@ header h1{
   background: linear-gradient(90deg,#e5e7eb,#9ca3af,#e5e7eb);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
-  text-shadow:0 0 20px rgba(255,255,255,0.4);
+  text-shadow:0 0 25px rgba(255,255,255,0.5);
 }
 
 header p{
@@ -39,7 +45,9 @@ header p{
   margin-top:5px;
 }
 
-/* ARAMA */
+/* =========================
+   ARAMA ÇUBUĞU
+========================= */
 .controls{
   max-width:1200px;
   margin:auto;
@@ -49,54 +57,60 @@ header p{
 .controls input{
   width:100%;
   padding:12px;
-  border-radius:12px;
+  border-radius:15px;
   border:none;
   outline:none;
-  background:linear-gradient(145deg,#cbd5e1,#94a3b8);
-  color:#020617;
   font-weight:bold;
-  box-shadow:inset 0 0 10px rgba(255,255,255,0.6);
+  background:linear-gradient(145deg,#e5e7eb,#9ca3af);
+  color:#020617;
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.8),
+    0 4px 15px rgba(0,0,0,0.6);
   margin-bottom:20px;
 }
 
-/* FİLTRELER */
+/* =========================
+   FİLTRE BUTONLARI
+========================= */
 .filters{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
-  gap:12px;
-  margin-bottom:20px;
+  gap:15px;
+  margin-bottom:25px;
 }
 
 .filter{
-  padding:10px 18px;
+  padding:10px 20px;
   border-radius:30px;
-  border:none;
-  cursor:pointer;
   font-weight:bold;
+  cursor:pointer;
   transition:0.3s;
   background:linear-gradient(145deg,#e5e7eb,#9ca3af);
   color:#020617;
+  border:none;
   box-shadow:
-    inset 0 0 6px rgba(255,255,255,0.7),
-    0 4px 15px rgba(0,0,0,0.6);
+    inset 0 0 8px rgba(255,255,255,0.8),
+    0 5px 18px rgba(0,0,0,0.6);
 }
 
 .filter:hover{
   transform:translateY(-3px);
   box-shadow:
-    inset 0 0 10px rgba(255,255,255,0.9),
-    0 6px 25px rgba(255,255,255,0.6);
+    inset 0 0 15px rgba(255,255,255,1),
+    0 8px 25px rgba(255,255,255,0.7);
 }
 
-/* RENK VURGULARI */
+/* FİLTRE RENK VURGULARI */
 .filter.metal{ border:2px solid #facc15; }
 .filter.ametal{ border:2px solid #22c55e; }
 .filter.yarimetal{ border:2px solid #38bdf8; }
 .filter.soygaz{ border:2px solid #a855f7; }
 .filter.all{ border:2px solid #e5e7eb; }
 
-/* TABLO GRID */
+/* =========================
+   TABLO GRID
+========================= */
 .periodic-table{
   display:grid;
   grid-template-columns:repeat(18,minmax(55px,1fr));
@@ -106,24 +120,26 @@ header p{
   margin:auto;
 }
 
-/* ELEMENT KUTUSU */
+/* =========================
+   ELEMENT KUTULARI
+========================= */
 .element{
-  border-radius:12px;
+  border-radius:14px;
   padding:6px;
-  cursor:pointer;
   text-align:center;
+  cursor:pointer;
   transition:0.25s;
   background:linear-gradient(145deg,#e5e7eb,#9ca3af,#e5e7eb);
   color:#020617;
   box-shadow:
-    inset 0 0 8px rgba(255,255,255,0.8),
-    0 4px 15px rgba(0,0,0,0.7);
+    inset 0 0 10px rgba(255,255,255,0.9),
+    0 5px 18px rgba(0,0,0,0.7);
 }
 
 .element:hover{
   transform:scale(1.12);
   box-shadow:
-    inset 0 0 15px rgba(255,255,255,1),
+    inset 0 0 20px rgba(255,255,255,1),
     0 0 30px rgba(255,255,255,0.9);
   z-index:5;
 }
@@ -142,7 +158,33 @@ header p{
   font-size:0.6rem;
 }
 
-/* MODAL */
+/* =========================
+   TÜR RENKLERİ
+========================= */
+
+/* METAL */
+.element.Metal{
+  background:linear-gradient(145deg,#fde047,#facc15,#eab308);
+}
+
+/* AMETAL */
+.element.Ametal{
+  background:linear-gradient(145deg,#4ade80,#22c55e,#16a34a);
+}
+
+/* YARI METAL */
+.element.YarıMetal{
+  background:linear-gradient(145deg,#7dd3fc,#38bdf8,#0ea5e9);
+}
+
+/* SOYGAZ */
+.element.Soygaz{
+  background:linear-gradient(145deg,#d8b4fe,#a855f7,#7e22ce);
+}
+
+/* =========================
+   MODAL (BİLGİ PENCERESİ)
+========================= */
 .modal{
   display:none;
   position:fixed;
@@ -155,17 +197,17 @@ header p{
 .modal-content{
   background:linear-gradient(145deg,#e5e7eb,#9ca3af);
   color:#020617;
-  padding:20px;
+  padding:25px;
   border-radius:20px;
   width:90%;
   max-width:450px;
   text-align:center;
-  box-shadow:0 0 40px rgba(255,255,255,0.8);
+  box-shadow:0 0 40px rgba(255,255,255,0.9);
 }
 
 .modal-content img{
   width:130px;
-  margin:10px 0;
+  margin:15px 0;
 }
 
 .close{
@@ -175,7 +217,9 @@ header p{
   color:#ef4444;
 }
 
-/* MOBİL */
+/* =========================
+   MOBİL UYUMLULUK
+========================= */
 @media(max-width:768px){
   .periodic-table{
     grid-template-columns:repeat(9,1fr);
