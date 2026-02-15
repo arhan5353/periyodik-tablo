@@ -1,217 +1,183 @@
-/* GENEL */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  background: radial-gradient(circle at top, #020617, #000);
-  color: #e5e7eb;
-  font-family: 'Segoe UI', Arial, sans-serif;
+/* GENEL METALİK ARKA PLAN */
+body{
+  font-family:'Segoe UI',sans-serif;
+  background: linear-gradient(135deg,#0f172a,#1e293b,#0f172a);
+  background-size:400% 400%;
+  animation: bgMove 12s infinite alternate;
+  color:#e5e7eb;
+}
+
+@keyframes bgMove{
+  0%{background-position:left;}
+  100%{background-position:right;}
 }
 
 /* BAŞLIK */
-header {
-  text-align: center;
-  padding: 20px;
+header{
+  text-align:center;
+  padding:20px;
 }
 
-header h1 {
-  font-size: 2.4rem;
-  color: #22d3ee;
-  text-shadow: 0 0 15px #22d3ee;
+header h1{
+  font-size:2.5rem;
+  letter-spacing:2px;
+  background: linear-gradient(90deg,#e5e7eb,#9ca3af,#e5e7eb);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 0 20px rgba(255,255,255,0.4);
 }
 
-header p {
-  color: #94a3b8;
-  margin-top: 5px;
+header p{
+  color:#94a3b8;
+  margin-top:5px;
 }
 
-/* KONTROLLER */
-.controls {
-  max-width: 1100px;
-  margin: auto;
-  padding: 15px;
+/* ARAMA */
+.controls{
+  max-width:1200px;
+  margin:auto;
+  padding:15px;
 }
 
-.controls input {
-  width: 100%;
-  padding: 12px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  background: #020617;
-  color: #e5e7eb;
-  box-shadow: 0 0 10px #0ea5e9;
-  margin-bottom: 15px;
+.controls input{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:none;
+  outline:none;
+  background:linear-gradient(145deg,#cbd5e1,#94a3b8);
+  color:#020617;
+  font-weight:bold;
+  box-shadow:inset 0 0 10px rgba(255,255,255,0.6);
+  margin-bottom:20px;
 }
 
-/* NEON FİLTRELER */
-.filter {
-  position: relative;
-  background: transparent;
-  color: inherit;
-  border: 2px solid currentColor;
+/* FİLTRELER */
+.filters{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:20px;
+}
+
+.filter{
+  padding:10px 18px;
+  border-radius:30px;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+  background:linear-gradient(145deg,#e5e7eb,#9ca3af);
+  color:#020617;
   box-shadow:
-    0 0 8px currentColor,
-    0 0 16px currentColor inset;
+    inset 0 0 6px rgba(255,255,255,0.7),
+    0 4px 15px rgba(0,0,0,0.6);
 }
 
-/* METAL NEON */
-.filter.metal {
-  color: #facc15;
-}
-
-/* AMETAL NEON */
-.filter.ametal {
-  color: #22c55e;
-}
-
-/* YARI METAL NEON */
-.filter.yarimetal {
-  color: #38bdf8;
-}
-
-/* SOYGAZ NEON */
-.filter.soygaz {
-  color: #a855f7;
-}
-
-/* TÜMÜ */
-.filter.all {
-  color: #e5e7eb;
-}
-
-/* HOVER NEON PATLAMA */
-.filter:hover {
+.filter:hover{
+  transform:translateY(-3px);
   box-shadow:
-    0 0 15px currentColor,
-    0 0 30px currentColor,
-    0 0 45px currentColor inset;
+    inset 0 0 10px rgba(255,255,255,0.9),
+    0 6px 25px rgba(255,255,255,0.6);
 }
 
-/* PERİYODİK TABLO */
-.periodic-table {
-  display: grid;
-  grid-template-columns: repeat(18, minmax(55px, 1fr));
-  gap: 6px;
-  padding: 20px;
-  max-width: 1400px;
-  margin: auto;
+/* RENK VURGULARI */
+.filter.metal{ border:2px solid #facc15; }
+.filter.ametal{ border:2px solid #22c55e; }
+.filter.yarimetal{ border:2px solid #38bdf8; }
+.filter.soygaz{ border:2px solid #a855f7; }
+.filter.all{ border:2px solid #e5e7eb; }
+
+/* TABLO GRID */
+.periodic-table{
+  display:grid;
+  grid-template-columns:repeat(18,minmax(55px,1fr));
+  gap:6px;
+  padding:20px;
+  max-width:1500px;
+  margin:auto;
 }
 
 /* ELEMENT KUTUSU */
-.element {
-  background: #020617;
-  border-radius: 10px;
-  padding: 6px;
-  cursor: pointer;
-  transition: 0.25s;
-  box-shadow: 0 0 10px #0ea5e9;
+.element{
+  border-radius:12px;
+  padding:6px;
+  cursor:pointer;
+  text-align:center;
+  transition:0.25s;
+  background:linear-gradient(145deg,#e5e7eb,#9ca3af,#e5e7eb);
+  color:#020617;
+  box-shadow:
+    inset 0 0 8px rgba(255,255,255,0.8),
+    0 4px 15px rgba(0,0,0,0.7);
 }
 
-.element:hover {
-  transform: scale(1.12);
-  z-index: 10;
-  box-shadow: 0 0 25px #22d3ee;
+.element:hover{
+  transform:scale(1.12);
+  box-shadow:
+    inset 0 0 15px rgba(255,255,255,1),
+    0 0 30px rgba(255,255,255,0.9);
+  z-index:5;
 }
 
-.element .number {
-  font-size: 0.7rem;
-  color: #94a3b8;
+.number{
+  font-size:0.7rem;
+  color:#334155;
 }
 
-.element .symbol {
-  font-size: 1.3rem;
-  font-weight: bold;
+.symbol{
+  font-size:1.3rem;
+  font-weight:bold;
 }
 
-.element .name {
-  font-size: 0.6rem;
+.name{
+  font-size:0.6rem;
 }
-
-/* TÜR RENKLERİ */
-.element.Metal { background: #facc15; color:#020617; }
-.element.Ametal { background: #22c55e; color:#020617; }
-.element.YarıMetal { background: #38bdf8; color:#020617; }
-.element.Soygaz { background: #a855f7; color:#020617; }
 
 /* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  justify-content:center;
+  align-items:center;
 }
 
-.modal-content {
-  background: #020617;
-  border-radius: 16px;
-  padding: 20px;
-  max-width: 420px;
-  width: 90%;
-  box-shadow: 0 0 30px #22d3ee;
-  text-align: center;
+.modal-content{
+  background:linear-gradient(145deg,#e5e7eb,#9ca3af);
+  color:#020617;
+  padding:20px;
+  border-radius:20px;
+  width:90%;
+  max-width:450px;
+  text-align:center;
+  box-shadow:0 0 40px rgba(255,255,255,0.8);
 }
 
-.modal-content img {
-  width: 120px;
-  margin: 10px 0;
+.modal-content img{
+  width:130px;
+  margin:10px 0;
 }
 
-.close {
-  float: right;
-  cursor: pointer;
-  font-size: 24px;
-  color: #f87171;
+.close{
+  float:right;
+  font-size:24px;
+  cursor:pointer;
+  color:#ef4444;
 }
 
 /* MOBİL */
-@media (max-width: 768px) {
-  .periodic-table {
-    grid-template-columns: repeat(9, 1fr);
+@media(max-width:768px){
+  .periodic-table{
+    grid-template-columns:repeat(9,1fr);
   }
-}
-/* CHROME / METAL TEMA */
-body {
-  background: linear-gradient(135deg, #0f172a, #020617);
-}
-
-.element {
-  background: linear-gradient(
-    145deg,
-    #e5e7eb,
-    #9ca3af,
-    #e5e7eb
-  );
-  color: #020617;
-  box-shadow:
-    inset 0 0 8px rgba(255,255,255,0.6),
-    0 0 15px rgba(148,163,184,0.6);
-}
-
-.element:hover {
-  box-shadow:
-    inset 0 0 15px rgba(255,255,255,0.9),
-    0 0 35px rgba(226,232,240,0.9);
-}
-
-/* TÜRE GÖRE CHROME RENKLER */
-.element.Metal {
-  background: linear-gradient(145deg,#fde047,#facc15,#eab308);
-}
-
-.element.Ametal {
-  background: linear-gradient(145deg,#4ade80,#22c55e,#16a34a);
-}
-
-.element.YarıMetal {
-  background: linear-gradient(145deg,#7dd3fc,#38bdf8,#0ea5e9);
-}
-
-.element.Soygaz {
-  background: linear-gradient(145deg,#d8b4fe,#a855f7,#7e22ce);
 }
