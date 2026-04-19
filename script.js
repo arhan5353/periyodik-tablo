@@ -213,6 +213,30 @@ function modalAc(e){
         <p><b>Kaynama Noktası:</b> ${e.kaynama}</p>
         <p><b>Tür:</b> ${e.tur}</p>
     `;
+document.getElementById("modalDetails").innerHTML = `
+
+<p><b>Atom Numarası:</b> ${e.atomNo}</p>
+<p><b>Atom Ağırlığı:</b> ${e.atomAgirligi}</p>
+
+<div class="trend-box">
+  <h3>📊 Periyodik Eğilimler</h3>
+
+  <p>➡️ Sağa Doğru:<br>
+  Atom yarıçapı küçülür ⬇️<br>
+  İyonlaşma enerjisi artar ⬆️<br>
+  Elektronegatiflik artar ⬆️<br>
+  Metalik özellik azalır ⬇️
+  </p>
+
+  <p>⬇️ Aşağı Doğru:<br>
+  Atom yarıçapı büyür ⬆️<br>
+  İyonlaşma enerjisi azalır ⬇️<br>
+  Elektronegatiflik azalır ⬇️<br>
+  Metalik özellik artar ⬆️
+  </p>
+</div>
+
+`;
 }
 <hr>
 
