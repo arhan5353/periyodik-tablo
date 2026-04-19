@@ -214,7 +214,23 @@ function modalAc(e){
         <p><b>Tür:</b> ${e.tur}</p>
     `;
 }
+<hr>
 
+<h3>📊 Periyodik Eğilimler</h3>
+
+<p>➡️ <b>Sağa Doğru:</b><br>
+Atom yarıçapı küçülür ⬇️<br>
+İyonlaşma enerjisi artar ⬆️<br>
+Elektronegatiflik artar ⬆️<br>
+Metalik özellik azalır ⬇️
+</p>
+
+<p>⬇️ <b>Aşağı Doğru:</b><br>
+Atom yarıçapı büyür ⬆️<br>
+İyonlaşma enerjisi azalır ⬇️<br>
+Elektronegatiflik azalır ⬇️<br>
+Metalik özellik artar ⬆️
+</p>
 function closeModal(){
     document.getElementById("modal").style.display = "none";
 }
