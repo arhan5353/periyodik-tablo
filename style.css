@@ -225,3 +225,13 @@ header p{
     grid-template-columns:repeat(9,1fr);
   }
 }
+#modalDetails h3{
+  margin-top:15px;
+  color:#38bdf8;
+}
+
+#modalDetails p{
+  margin-top:10px;
+  font-size:14px;
+  line-height:1.5;
+}
