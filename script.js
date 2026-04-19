@@ -3,7 +3,7 @@ const arama = document.getElementById("searchInput");
 
 let elementler = [];
 
-/* 118 ELEMENT VERİSİ */
+/* VERİYİ ÇEK */
 fetch("https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json")
 .then(res => res.json())
 .then(veri => {
@@ -25,6 +25,7 @@ fetch("https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master
     tabloyuCiz(elementler);
 });
 
+/* TÜRKÇE İSİMLER */
 function turkceIsim(ingilizce){
 
 const ceviri = {
@@ -160,8 +161,7 @@ Oganesson:"Oganesson"
 return ceviri[ingilizce] || ingilizce;
 }
 
-
-/* TÜRÜ TÜRKÇEYE ÇEVİR */
+/* TÜR */
 function turCevir(kategori){
     if(kategori.includes("metal") && !kategori.includes("metalloid"))
         return "Metal";
@@ -172,7 +172,7 @@ function turCevir(kategori){
     return "Ametal";
 }
 
-/* TABLOYU ÇİZ */
+/* TABLO ÇİZ */
 function tabloyuCiz(liste){
 
     tablo.innerHTML = "";
@@ -233,35 +233,9 @@ function modalAc(e){
         </div>
     `;
 }
-<hr>
 
-<h3>📊 Periyodik Eğilimler</h3>
-
-<p>➡️ <b>Sağa Doğru:</b><br>
-Atom yarıçapı küçülür ⬇️<br>
-İyonlaşma enerjisi artar ⬆️<br>
-Elektronegatiflik artar ⬆️<br>
-Metalik özellik azalır ⬇️
-</p>
-
-<p>⬇️ <b>Aşağı Doğru:</b><br>
-Atom yarıçapı büyür ⬆️<br>
-İyonlaşma enerjisi azalır ⬇️<br>
-Elektronegatiflik azalır ⬇️<br>
-Metalik özellik artar ⬆️
-</p>
 function closeModal(){
     document.getElementById("modal").style.display = "none";
-}
-
-/* FİLTRE */
-function filterElements(tur){
-
-    if(tur === "all"){
-        tabloyuCiz(elementler);
-    } else {
-        tabloyuCiz(elementler.filter(e => e.tur === tur));
-    }
 }
 
 /* ARAMA */
@@ -277,3 +251,13 @@ arama.addEventListener("input", () => {
         )
     );
 });
+
+/* FİLTRE */
+function filterElements(tur){
+
+    if(tur === "all"){
+        tabloyuCiz(elementler);
+    } else {
+        tabloyuCiz(elementler.filter(e => e.tur === tur));
+    }
+}
