@@ -1,44 +1,60 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Periyodik Tablo | Kimya Projesi</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Periyodik Tablo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <h1>🧪 PERİYODİK TABLO</h1>
-  <p>118 element • Kimya Dönem Ödevi</p>
-</header>
+<h1>⚛ PERİYODİK TABLO</h1>
 
-<section class="controls">
-  <input type="text" id="searchInput" placeholder="Element ara (Hidrojen, H, 1...)">
+<input type="text" id="searchInput" placeholder="Element ara...">
 
-  <div class="filters">
-    <button class="filter metal" onclick="filterElements('Metal')">Metal</button>
-    <button class="filter ametal" onclick="filterElements('Ametal')">Ametal</button>
-    <button class="filter yarimetal" onclick="filterElements('Yarı Metal')">Yarı Metal</button>
-    <button class="filter soygaz" onclick="filterElements('Soygaz')">Soygaz</button>
-    <button class="filter all" onclick="filterElements('all')">Tümü</button>
-  </div>
-</section>
+<div class="filters">
+    <button onclick="filterElements('all')">Tümü</button>
+    <button onclick="filterElements('Metal')">Metal</button>
+    <button onclick="filterElements('Ametal')">Ametal</button>
+    <button onclick="filterElements('YarıMetal')">YarıMetal</button>
+    <button onclick="filterElements('Soygaz')">Soygaz</button>
+</div>
 
-<main>
-  <div id="periodicTable" class="periodic-table"></div>
-</main>
+<div id="periodicTable"></div>
 
-<!-- BİLGİ PENCERESİ -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">×</span>
-    <h2 id="modalName"></h2>
-    <img id="modalImage" alt="Element görseli">
-    <div id="modalDetails"></div>
-  </div>
+<!-- PERİYODİK EĞİLİMLER -->
+<div class="trend-panel">
+    <h2>📊 Periyodik Eğilimler</h2>
+
+    <div class="trend-grid">
+        <div class="trend-box">
+            <h3>➡️ Sağa Doğru</h3>
+            <p>Atom yarıçapı ⬇️</p>
+            <p>İyonlaşma enerjisi ⬆️</p>
+            <p>Elektronegatiflik ⬆️</p>
+            <p>Metalik özellik ⬇️</p>
+        </div>
+
+        <div class="trend-box">
+            <h3>⬇️ Aşağı Doğru</h3>
+            <p>Atom yarıçapı ⬆️</p>
+            <p>İyonlaşma enerjisi ⬇️</p>
+            <p>Elektronegatiflik ⬇️</p>
+            <p>Metalik özellik ⬆️</p>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL -->
+<div id="modal">
+    <div class="modal-content">
+        <span onclick="closeModal()">X</span>
+        <h2 id="modalName"></h2>
+        <img id="modalImage">
+        <div id="modalDetails"></div>
+    </div>
 </div>
 
 <script src="script.js"></script>
+
 </body>
 </html>
