@@ -9,36 +9,29 @@ h1{
     color:#38bdf8;
 }
 
-#searchInput{
-    padding:10px;
-    width:250px;
-    margin:10px;
-    border-radius:10px;
-    border:none;
-}
-
-.filters button{
-    padding:10px;
-    margin:5px;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
-}
-
+/* TABLO GRID */
 #periodicTable{
     display:grid;
-    grid-template-columns:repeat(18, 60px);
+    grid-template-columns:repeat(18, 70px);
+    grid-template-rows:repeat(10, 70px);
     gap:5px;
     justify-content:center;
     margin-top:20px;
 }
 
+/* KUTU */
 .element{
-    padding:5px;
+    width:70px;
+    height:70px;
     border-radius:10px;
     cursor:pointer;
     font-size:12px;
     transition:0.3s;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
 .element:hover{
@@ -72,24 +65,4 @@ h1{
 
 .modal-content img{
     width:150px;
-}
-
-/* TREND PANEL */
-.trend-panel{
-  margin-top:40px;
-  padding:20px;
-  border-radius:15px;
-  background:rgba(255,255,255,0.05);
-}
-
-.trend-grid{
-  display:flex;
-  gap:20px;
-  justify-content:center;
-}
-
-.trend-box{
-  background:rgba(255,255,255,0.1);
-  padding:15px;
-  border-radius:10px;
 }
