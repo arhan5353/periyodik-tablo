@@ -3,35 +3,7 @@ const arama = document.getElementById("searchInput");
 
 let elementler = [];
 
-/* TÜRKÇE İSİM */
-function turkceIsim(ad){
-    const ceviri = {
-        Hydrogen:"Hidrojen", Helium:"Helyum", Lithium:"Lityum", Beryllium:"Berilyum",
-        Boron:"Bor", Carbon:"Karbon", Nitrogen:"Azot", Oxygen:"Oksijen",
-        Fluorine:"Flor", Neon:"Neon", Sodium:"Sodyum", Magnesium:"Magnezyum",
-        Aluminum:"Alüminyum", Silicon:"Silisyum", Phosphorus:"Fosfor",
-        Sulfur:"Kükürt", Chlorine:"Klor", Argon:"Argon",
-        Potassium:"Potasyum", Calcium:"Kalsiyum", Iron:"Demir",
-        Copper:"Bakır", Silver:"Gümüş", Gold:"Altın",
-        Lead:"Kurşun", Mercury:"Cıva", Uranium:"Uranyum",
-        Plutonium:"Plütonyum", Einsteinium:"Einsteinyum",
-        Fermium:"Fermiyum"
-    };
-    return ceviri[ad] || ad;
-}
-
-/* TÜR */
-function turCevir(kategori){
-    kategori = kategori.toLowerCase();
-
-    if(kategori.includes("metalloid")) return "YarıMetal";
-    if(kategori.includes("noble")) return "Soygaz";
-    if(kategori.includes("metal")) return "Metal";
-
-    return "Ametal";
-}
-
-/* VERİ ÇEK */
+/* VERİYİ ÇEK */
 fetch("https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json")
 .then(res => res.json())
 .then(veri => {
@@ -53,7 +25,154 @@ fetch("https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master
     tabloyuCiz(elementler);
 });
 
-/* TABLO */
+/* TÜRKÇE İSİMLER */
+function turkceIsim(ingilizce){
+
+const ceviri = {
+
+Hydrogen:"Hidrojen",
+Helium:"Helyum",
+Lithium:"Lityum",
+Beryllium:"Berilyum",
+Boron:"Bor",
+Carbon:"Karbon",
+Nitrogen:"Azot",
+Oxygen:"Oksijen",
+Fluorine:"Flor",
+Neon:"Neon",
+
+Sodium:"Sodyum",
+Magnesium:"Magnezyum",
+Aluminum:"Alüminyum",
+Silicon:"Silisyum",
+Phosphorus:"Fosfor",
+Sulfur:"Kükürt",
+Chlorine:"Klor",
+Argon:"Argon",
+
+Potassium:"Potasyum",
+Calcium:"Kalsiyum",
+Scandium:"Skandiyum",
+Titanium:"Titanyum",
+Vanadium:"Vanadyum",
+Chromium:"Krom",
+Manganese:"Manganez",
+Iron:"Demir",
+Cobalt:"Kobalt",
+Nickel:"Nikel",
+Copper:"Bakır",
+Zinc:"Çinko",
+Gallium:"Galyum",
+Germanium:"Germanyum",
+Arsenic:"Arsenik",
+Selenium:"Selenyum",
+Bromine:"Brom",
+Krypton:"Kripton",
+
+Rubidium:"Rubidyum",
+Strontium:"Stronsiyum",
+Yttrium:"İtriyum",
+Zirconium:"Zirkonyum",
+Niobium:"Niyobyum",
+Molybdenum:"Molibden",
+Technetium:"Teknesyum",
+Ruthenium:"Rutenyum",
+Rhodium:"Rodyum",
+Palladium:"Paladyum",
+Silver:"Gümüş",
+Cadmium:"Kadmiyum",
+Indium:"İndiyum",
+Tin:"Kalay",
+Antimony:"Antimon",
+Tellurium:"Tellür",
+Iodine:"İyot",
+Xenon:"Ksenon",
+
+Cesium:"Sezyum",
+Barium:"Baryum",
+Lanthanum:"Lantan",
+Cerium:"Seryum",
+Praseodymium:"Praseodimyum",
+Neodymium:"Neodimyum",
+Promethium:"Prometyum",
+Samarium:"Samaryum",
+Europium:"Evropiyum",
+Gadolinium:"Gadolinyum",
+Terbium:"Terbiyum",
+Dysprosium:"Disprosyum",
+Holmium:"Holmiyum",
+Erbium:"Erbiyum",
+Thulium:"Tulyum",
+Ytterbium:"İterbiyum",
+Lutetium:"Lutesyum",
+
+Hafnium:"Hafniyum",
+Tantalum:"Tantal",
+Tungsten:"Tungsten",
+Rhenium:"Reniyum",
+Osmium:"Osmiyum",
+Iridium:"İridyum",
+Platinum:"Platin",
+Gold:"Altın",
+Mercury:"Cıva",
+Thallium:"Talyum",
+Lead:"Kurşun",
+Bismuth:"Bizmut",
+Polonium:"Polonyum",
+Astatine:"Astatin",
+Radon:"Radon",
+
+Francium:"Fransiyum",
+Radium:"Radyum",
+Actinium:"Aktinyum",
+Thorium:"Toryum",
+Protactinium:"Protaktinyum",
+Uranium:"Uranyum",
+Neptunium:"Neptünyum",
+Plutonium:"Plütonyum",
+Americium:"Amerikyum",
+Curium:"Küriyum",
+Berkelium:"Berkelyum",
+Californium:"Kaliforniyum",
+Einsteinium:"Einsteinyum",
+Fermium:"Fermiyum",
+Mendelevium:"Mendelevyum",
+Nobelium:"Nobelyum",
+Lawrencium:"Lavrensiyum",
+
+Rutherfordium:"Rutherfordyum",
+Dubnium:"Dubniyum",
+Seaborgium:"Seaborgiyum",
+Bohrium:"Bohriyum",
+Hassium:"Hasyum",
+Meitnerium:"Meitneryum",
+Darmstadtium:"Darmstadtiyum",
+Roentgenium:"Röntgenyum",
+Copernicium:"Kopernikyum",
+Nihonium:"Nihonyum",
+Flerovium:"Flerovyum",
+Moscovium:"Moskovyum",
+Livermorium:"Livermoryum",
+Tennessine:"Tennesin",
+Oganesson:"Oganesson"
+
+};
+
+return ceviri[ingilizce] || ingilizce;
+}
+
+/* TÜR */
+function turCevir(kategori){
+    if(kategori.includes("metal") && !kategori.includes("metalloid"))
+        return "Metal";
+    if(kategori.includes("metalloid"))
+        return "YarıMetal";
+    if(kategori.includes("noble"))
+        return "Soygaz";
+    return "Ametal";
+}
+
+/* TABLO ÇİZ */
 function tabloyuCiz(liste){
 
     tablo.innerHTML = "";
@@ -62,7 +181,6 @@ function tabloyuCiz(liste){
 
         const kutu = document.createElement("div");
         kutu.className = `element ${e.tur}`;
-
         kutu.style.gridRow = e.satir;
         kutu.style.gridColumn = e.sutun;
 
@@ -80,21 +198,42 @@ function tabloyuCiz(liste){
 
 /* MODAL */
 function modalAc(e){
+
     document.getElementById("modal").style.display = "flex";
-    document.getElementById("modalName").innerText = `${e.ad} (${e.sembol})`;
+
+    document.getElementById("modalName").innerText =
+        `${e.ad} (${e.sembol})`;
+
     document.getElementById("modalImage").src = e.gorsel;
 
     document.getElementById("modalDetails").innerHTML = `
-        <p><b>Atom No:</b> ${e.atomNo}</p>
-        <p><b>Ağırlık:</b> ${e.atomAgirligi}</p>
-        <p><b>Elektron:</b> ${e.elektron}</p>
-        <p><b>Erime:</b> ${e.erime}</p>
-        <p><b>Kaynama:</b> ${e.kaynama}</p>
+        <p><b>Atom Numarası:</b> ${e.atomNo}</p>
+        <p><b>Atom Ağırlığı:</b> ${e.atomAgirligi}</p>
+        <p><b>Elektron Dizilimi:</b> ${e.elektron}</p>
+        <p><b>Erime Noktası:</b> ${e.erime}</p>
+        <p><b>Kaynama Noktası:</b> ${e.kaynama}</p>
         <p><b>Tür:</b> ${e.tur}</p>
+
+        <div class="trend-box">
+            <h3>📊 Periyodik Eğilimler</h3>
+
+            <p>➡️ Sağa Doğru:<br>
+            Atom yarıçapı küçülür ⬇️<br>
+            İyonlaşma enerjisi artar ⬆️<br>
+            Elektronegatiflik artar ⬆️<br>
+            Metalik özellik azalır ⬇️
+            </p>
+
+            <p>⬇️ Aşağı Doğru:<br>
+            Atom yarıçapı büyür ⬆️<br>
+            İyonlaşma enerjisi azalır ⬇️<br>
+            Elektronegatiflik azalır ⬇️<br>
+            Metalik özellik artar ⬆️
+            </p>
+        </div>
     `;
 }
 
-/* MODAL KAPAT */
 function closeModal(){
     document.getElementById("modal").style.display = "none";
 }
